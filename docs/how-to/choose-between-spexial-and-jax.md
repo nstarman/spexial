@@ -39,9 +39,9 @@ There is no decision to make for these — JAX has nothing at any version:
 
 |  |  |
 | --- | --- |
-| `K0`, `K1`, `K2` | modified Bessel functions of the second kind |
-| `K0e`, `K1e`, `K2e` | the same, scaled by $e^z$ — **the only ones that work past $z \approx 705$** |
-| `Li` | the polylogarithm (compare `mpmath.polylog`) |
+| `k0`, `k1`, `k2` | modified Bessel functions of the second kind |
+| `k0e`, `k1e`, `k2e` | the same, scaled by $e^z$ — **the only ones that work past $z \approx 705$** |
+| `polylog` | the polylogarithm (compare `mpmath.polylog`) |
 | `eval_gegenbauer` | Gegenbauer polynomials |
 | `eval_gegenbauers` | every order up to `n` in one pass; no counterpart anywhere |
 
@@ -53,8 +53,11 @@ The table above is generated from a registry that ships with the package, and it
 
 ```pycon
 >>> from spexial.registry import REGISTRY, Status
->>> sorted(k for k, v in REGISTRY.items() if v.status is Status.UNIQUE)
-['K0', 'K0e', 'K1', 'K1e', 'K2', 'K2e', 'Li', 'eval_gegenbauer', 'eval_gegenbauers']
+>>> unique = sorted(k for k, v in REGISTRY.items() if v.status is Status.UNIQUE)
+>>> unique[:4]
+['eval_gegenbauer', 'eval_gegenbauers', 'k0', 'k0e']
+>>> unique[4:]
+['k1', 'k1e', 'k2', 'k2e', 'polylog']
 
 ```
 

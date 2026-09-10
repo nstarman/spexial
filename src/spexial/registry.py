@@ -7,8 +7,11 @@ writing. See `spexial._src.registry` for the reasoning behind each field.
 Examples
 --------
 >>> from spexial.registry import REGISTRY, Status
->>> sorted(k for k, v in REGISTRY.items() if v.status is Status.UNIQUE)
-['K0', 'K0e', 'K1', 'K1e', 'K2', 'K2e', 'Li', 'eval_gegenbauer', 'eval_gegenbauers']
+>>> unique = sorted(k for k, v in REGISTRY.items() if v.status is Status.UNIQUE)
+>>> unique[:4]
+['eval_gegenbauer', 'eval_gegenbauers', 'k0', 'k0e']
+>>> unique[4:]
+['k1', 'k1e', 'k2', 'k2e', 'polylog']
 
 """
 
