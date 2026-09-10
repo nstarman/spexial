@@ -83,9 +83,9 @@ Everything below assumes x64. Full detail, including how each was measured, is a
 | Function | Domain | Accurate to |
 | --- | --- | --- |
 | `comb` | `0 <= k <= N`, to `DBL_MAX` | `3.6e-12` |
-| `gamma` | real or complex, `\|x\| < 171` | `4e-13` |
-| `eval_gegenbauer` | `n <= 20`, `alpha > -0.5`, `\|x\| <= 1` | `1.8e-12` rtol; absolute error scales with the recurrence, up to `9e-5` at `n = 20, alpha = 10` |
+| `gamma` | real or complex, `\|x\| < 171` | `4.3e-13` |
+| `eval_gegenbauer` | `n <= 20`, `alpha > -0.5`, `\|x\| <= 1` | `2.1e-12` rtol; absolute error scales with the recurrence, up to `9e-5` at `n = 20, alpha = 10` |
 | `K0`/`K1`/`K2` | `0 < z < 705.3` (float64; 85.3 in float32, 16.2 in float16) | `2.0e-7` |
 | `K0e`/`K1e`/`K2e` | `z > 0`, no upper limit | `2.0e-7` |
-| `Li` | scalar `z`, `n >= 1` | `6e-13` |
+| `Li` | scalar `z`, `n >= 1` | `7.7e-12` |
 | `zeta` | `n > 1`, or negative integer `> -60` | `7e-16` |
